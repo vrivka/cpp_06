@@ -4,9 +4,12 @@
 #include <iostream>
 #include <iomanip>
 
-typedef struct Data_s {
+typedef struct s_list {
 	int i;
-} Data;
+	struct s_list *next;
+} t_list;
+
+typedef t_list Data;
 
 uintptr_t serialize(Data* ptr);
 Data* deserialize(uintptr_t raw);

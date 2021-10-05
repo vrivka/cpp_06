@@ -1,18 +1,12 @@
 #include <iostream>
 #include <cstdlib>
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
-class Base {
-public:
-	virtual ~Base() {};
-};
 
-class A : public Base {};
-
-class B : public Base {};
-
-class C : public Base {};
-
-Base *generate(void)
+Base *generate()
 {
 	int rand_num;
 
@@ -38,13 +32,13 @@ void identify(Base *p)
 	C *c = dynamic_cast<C *>(p);
 
 	if (a)
-		std::cout << "It's A\n";
+		std::cout << "It's pointer A\n";
 	else if (b)
-		std::cout << "It's B\n";
+		std::cout << "It's pointer B\n";
 	else if (c)
-		std::cout << "It's C\n";
+		std::cout << "It's pointer C\n";
 	else
-		std::cout << "It's Base\n";
+		std::cout << "It's pointer Base\n";
 }
 
 void identify(Base &p)
@@ -52,32 +46,34 @@ void identify(Base &p)
 	try
 	{
 		A &a = dynamic_cast<A &>(p);
-		std::cout << "It's A\n";
+		std::cout << "It's reference A\n";
 		return ;
 	}
 	catch (...) {}
 	try
 	{
 		B &b = dynamic_cast<B &>(p);
-		std::cout << "It's B\n";
+		std::cout << "It's reference B\n";
 		return ;
 	}
 	catch (...) {}
 	try
 	{
 		C &c = dynamic_cast<C &>(p);
-		std::cout << "It's C\n";
+		std::cout << "It's reference C\n";
 		return ;
 	}
 	catch (...) {}
-	std::cout << "It's Base\n";
+	std::cout << "It's reference Base\n";
 }
 
 int main()
 {
-	Base *p = generate();
+	Base *ptr = generate();
+	Base &ref = *ptr;
 
-	identify(p);
+	identify(ptr);
+	identify(ref);
 
-	delete p;
+	delete ptr;
 }
