@@ -3,6 +3,10 @@
 
 #include <iostream>
 #include <iomanip>
+#include <typeinfo>
+#include <cstring>
+#include <climits>
+#include <cstdlib>
 
 char const *detect_literals_type(char const *arg);
 void char_convert(char const *arg);
