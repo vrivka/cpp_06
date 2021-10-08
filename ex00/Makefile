@@ -1,6 +1,8 @@
 NAME = converter
 
-SRCS =	main.cpp
+SRCS =	detectors.cpp \
+		converters.cpp \
+		main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
