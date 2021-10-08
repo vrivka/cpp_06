@@ -79,7 +79,7 @@ void double_convert(char const *arg) {
 	else
 		std::cout << static_cast<int>(double_value) << std::endl;
 	if (has_precision(double_value))
-		std::cout << std::setprecision(2);
+		std::cout << std::setprecision(1);
 	std::cout << "float: " << std::fixed << static_cast<float>(double_value) << 'f' << std::endl;
 	std::cout << "double: " << std::fixed << double_value << std::endl;
 }
