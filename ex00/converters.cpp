@@ -28,8 +28,7 @@ void int_convert(char const *arg) {
 	std::cout << "double: " << std::fixed << static_cast<double>(long_int_value) << std::endl;
 }
 
-bool has_precision(double const &arg)
-{
+bool has_precision(double const &arg) {
 	int a = static_cast<int>(arg);
 	double b = arg - static_cast<double>(a);
 

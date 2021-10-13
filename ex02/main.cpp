@@ -6,8 +6,7 @@
 #include "C.hpp"
 
 
-Base *generate()
-{
+Base *generate() {
 	int rand_num;
 
 	srand(time(NULL));
@@ -25,8 +24,7 @@ Base *generate()
 	}
 }
 
-void identify(Base *p)
-{
+void identify(Base *p) {
 	A *a = dynamic_cast<A *>(p);
 	B *b = dynamic_cast<B *>(p);
 	C *c = dynamic_cast<C *>(p);
@@ -41,25 +39,24 @@ void identify(Base *p)
 		std::cout << "It's pointer Base\n";
 }
 
-void identify(Base &p)
-{
-	try
-	{
+void identify(Base &p) {
+	try {
 		A &a = dynamic_cast<A &>(p);
+		(void)a;
 		std::cout << "It's reference A\n";
 		return ;
 	}
 	catch (...) {}
-	try
-	{
+	try {
 		B &b = dynamic_cast<B &>(p);
+		(void)b;
 		std::cout << "It's reference B\n";
 		return ;
 	}
 	catch (...) {}
-	try
-	{
+	try {
 		C &c = dynamic_cast<C &>(p);
+		(void)c;
 		std::cout << "It's reference C\n";
 		return ;
 	}
@@ -67,8 +64,7 @@ void identify(Base &p)
 	std::cout << "It's reference Base\n";
 }
 
-int main()
-{
+int main() {
 	Base *ptr = generate();
 	Base &ref = *ptr;
 

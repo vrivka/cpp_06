@@ -7,8 +7,7 @@ static void print_impossible() {
 	std::cout << "double: impossible\n";
 }
 
-int main(int ac, char **av)
-{
+int main(int ac, char **av) {
 	char const *s;
 
 	if (ac < 2)

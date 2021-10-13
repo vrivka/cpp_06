@@ -1,7 +1,6 @@
 #include "serialize.hpp"
 
-int main()
-{
+int main() {
 	Data data_serialize;
 	Data *datad;
 	uintptr_t raw;

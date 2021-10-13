@@ -1,5 +1,7 @@
 NAME = serialize_test
 
+HEADER = serialize.hpp
+
 SRCS =	serialize.cpp \
         deserialize.cpp \
         main.cpp
@@ -12,8 +14,8 @@ RM = rm -f
 
 all:	$(NAME)
 
-$(NAME):	$(OBJS)
-		clang++ $(CFLAGS) -o $(NAME) $^
+$(NAME):	$(OBJS) $(HEADER)
+		clang++ $(CFLAGS) -o $(NAME) $(OBJS)
 
 %.o:	%.cpp
 		clang++ $(CFLAGS) -c $< -o $@ -I.

@@ -1,5 +1,10 @@
 NAME = type_info
 
+HEADER = A.hpp \
+         B.hpp \
+         Base.hpp \
+         C.hpp
+
 SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
@@ -10,8 +15,8 @@ RM = rm -f
 
 all:	$(NAME)
 
-$(NAME):	$(OBJS)
-		clang++ $(CFLAGS) -o $(NAME) $^
+$(NAME):	$(OBJS) $(HEADER)
+		clang++ $(CFLAGS) -o $(NAME) $(OBJS)
 
 %.o:	%.cpp
 		clang++ $(CFLAGS) -c $< -o $@ -I.

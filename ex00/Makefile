@@ -1,4 +1,6 @@
-NAME = converter
+NAME = convert
+
+HEADER = converter.hpp
 
 SRCS =	detectors.cpp \
 		converters.cpp \
@@ -12,8 +14,8 @@ RM = rm -f
 
 all:	$(NAME)
 
-$(NAME):	$(OBJS)
-		clang++ $(CFLAGS) -o $(NAME) $^
+$(NAME):	$(OBJS) $(HEADER)
+		clang++ $(CFLAGS) -o $(NAME) $(OBJS)
 
 %.o:	%.cpp
 		clang++ $(CFLAGS) -c $< -o $@ -I.
